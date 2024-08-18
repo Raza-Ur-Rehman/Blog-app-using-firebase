@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+}
+.page1 {
+    background: url(../image/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    /* padding: 10px 60px;
+    color: #f4f4f4; */
+    overflow: hidden;
+}
+
+.main {
+    background-color: #000000;
+    opacity: 55%;
+    padding: 10px 80px;
+    color: #f4f4f4;
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+    border-bottom: 2px solid #606367;
+}
+
+.header .logo {
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header .logo img {
+    width: 30px;
+    object-fit: contain;
+    /* background-size: contain; */
+
+}
+
+.header .logo h2 {
+    font-size: 30px;
+    padding-top: 7px;
+}
+
+.header .navbox {
+    gap: 80px;
+    /* text-align: center; */
+    /* text-decoration: none; */
+}
+
+.header .navbox .box {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header .navbox .box a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+
+}
+.header .navbox .box .login {
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+}
+
+.header .navbox .box:hover {
+    border-bottom: 2px solid #ffffff;
+}
+.header .navbox .box i {
+    font-size: 24px;
+    padding: 0px 10px;
+}
+
+.sidebar {
+    display: none;
+    padding: 0px 20px;
+    height: 20%;
+    
+}
+/* hero section Style  */
+
+.herobox {
+    align-items: end;
+    height: 80%;
+}
+
+.herosec {
+    width: 670px;
+
+}
+
+.herosec p,a {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.herosec .title h1 {
+    font-size: 54px;
+    font-weight: 700;
+}
+
+.herosec .title .dis {
+    /* background-color: aqua; */
+    width: 470px;
+    /* height: 72px; */
+}
+
+.herosec .title .dis p {
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+@media (max-width: 990px) {
+    .page1 {
+        /* overflow: scroll; */
+    }
+    .main {
+        padding: 15px;
+    }
+    .herobox {
+        align-items: center;
+    }
+    .herosec {
+        width: 100%;
+    }
+    .herosec .title .dis {
+        width: 100%;
+    }
+    .sidebar .navbox .box a {
+        font-size: 16px;
+    }
+}
