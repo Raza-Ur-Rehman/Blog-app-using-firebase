@@ -8,18 +8,33 @@ let loader = document.getElementById('loader');
 
 const signUp = ()=>{
     event.preventDefault();
-    // console.log(loader);
-    loader.style.display = "block";
+    // loader.style.display = "block";
+    signUpBtn.innerText = 'loading....'
      createUserWithEmailAndPassword(auth, signupUserEmail.value, signupUserPass.value)
   .then((userCredential) => {
     const user = userCredential.user;
-    console.log(user);
+    signUpBtn.innerText = 'SignUp'
+    Toastify({
+        
+        text: 'Signup Successfully',
 
+        duration: 3000
+        
+        }).showToast();
+        
+    
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorMessage);
+    signUpBtn.innerText = 'SignUp'
+    Toastify({
+        
+        text: `${errorMessage}`,
+
+        duration: 3000
+        
+        }).showToast();
   });
     
  }
