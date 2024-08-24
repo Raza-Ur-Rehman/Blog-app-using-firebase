@@ -6,35 +6,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../../style.css"> 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <form>
-            <h1>Account Login</h1>
-            <div class="input-box">
-                <input type="email" placeholder="User Email" id="loginEmail">
-                <i class='bx bxs-envelope'></i>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="User password" id="loginPass" >
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-            <div class="remember">
-                <label><input type="checkbox" >Remember me</label>
-                <a href="#">Forget password</a>
-            </div>
-            <button class="btn" id="loginBtn">Login</button>
-
-            <div class="register">
-                <p>Don't have an account?</p>
-                <a href="../signup/signup.html">SignUp</a>
-            </div>
-        </form>
+    <div class="box">
+        <div class="wrapper">
+            <form>
+                <h1>Account Login</h1>
+                <div class="input-box">
+                    <input type="email" placeholder="User Email" id="loginEmail">
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="User password" id="loginPass" >
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember">
+                    <a href="#">Forget password</a>
+                </div>
+                <button class="btn" id="loginBtn">Login</button>
+    
+                <div class="register">
+                    <p>Don't have an account?</p>
+                    <a href="../signup/signup.html">SignUp</a>
+                </div>
+            </form>
+        </div>
     </div>
 
 
@@ -50,7 +52,7 @@
 
     <script type="module" src="../../firebase.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="login.js"></script>
+    <script src="login.js" type="module"></script>
     
 </body>
 
