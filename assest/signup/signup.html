@@ -8,26 +8,27 @@
     <link rel="stylesheet" href="./signup.css">       
     <link rel="stylesheet" href="../../style.css">       
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
-    <div class="loader_box id="loader"">
+    <!-- <div class="loader_box id="loader"">
         <div class="custom-loader" ></div>
-    </div>
+    </div> -->
     <div class="box">
     <div class="wrapper">
         <form>
             <h1>Account Signup</h1>
             <div class="input-box">
-                <input type="text" placeholder="User Name" id="signupUserName" required>
+                <input type="text" placeholder="User Name" id="signupUserName" >
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="email" placeholder="User Email" id="signupUserEmail"required>
+                <input type="email" placeholder="User Email" id="signupUserEmail">
                 <i class='bx bxs-envelope'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="User password" id="signupUserPass" required>
+                <input type="password" placeholder="User password" id="signupUserPass">
                 <i class='bx bxs-lock-alt'></i>
             </div>              
            
@@ -37,6 +38,7 @@
     </div>
 </div>
     <script type="module" src="../../firebase.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src="./signup.js"></script>
 </body>
 
