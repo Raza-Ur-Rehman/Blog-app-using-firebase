@@ -5,34 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Form</title>
-    <link rel="stylesheet" href="./signup.css">
+    <link rel="stylesheet" href="./signup.css">       
+    <link rel="stylesheet" href="../../style.css">       
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-
+    <div class="loader_box id="loader"">
+        <div class="custom-loader" ></div>
+    </div>
+    <div class="box">
     <div class="wrapper">
         <form>
             <h1>Account Signup</h1>
             <div class="input-box">
-                <input type="text" placeholder="User Name" required>
+                <input type="text" placeholder="User Name" id="signupUserName" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="email" placeholder="User Email" required>
+                <input type="email" placeholder="User Email" id="signupUserEmail"required>
                 <i class='bx bxs-envelope'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="User password" required>
+                <input type="password" placeholder="User password" id="signupUserPass" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>              
            
-            <button class="btn">Continue</button>
+            <button class="btn" id="signupBtn">SignUp</button>
             
         </form>
     </div>
-
-    <script src="./signup.js"></script>
+</div>
+    <script type="module" src="../../firebase.js"></script>
+    <script type="module" src="./signup.js"></script>
 </body>
 
 </html>
