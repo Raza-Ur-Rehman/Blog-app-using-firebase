@@ -1,4 +1,4 @@
-import {auth , createUserWithEmailAndPassword} from '../../firebase.js'
+import {auth , createUserWithEmailAndPassword ,onAuthStateChanged} from '../../firebase.js'
 
 let formFeild = document.querySelectorAll("form input");
 const [signupUserName, signupUserEmail, signupUserPass] = formFeild;
@@ -14,14 +14,14 @@ const signUp = ()=>{
   .then((userCredential) => {
     const user = userCredential.user;
     signUpBtn.innerText = 'SignUp'
-    Toastify({
+    // Toastify({
         
-        text: 'Signup Successfully',
+    //     text: 'Signup Successfully',
 
-        duration: 3000
+    //     duration: 3000
         
-        }).showToast();
-        
+    //     }).showToast();
+
     
   })
   .catch((error) => {
@@ -41,6 +41,10 @@ const signUp = ()=>{
 
  signUpBtn.addEventListener('click',signUp);
 
-
+ onAuthStateChanged(auth, (user) => {
+    if (user) {
+        window.location.href = '../dashbord/dashboard.html'
+    }
+  });
 
 
