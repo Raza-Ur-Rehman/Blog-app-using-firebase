@@ -8,14 +8,12 @@ function sideBar() {
   isOpen = !isOpen;
   if (isOpen) {
     sidebar.style.display = "none";
-    // sidebar.classList.remove("d-flex")
-    // console.log("hello");
+  
     
 } 
 else {
     sidebar.style.display = "flex";
 
-    // sidebar.classList.add("d-flex")
   }
  }
 
