@@ -1,9 +1,9 @@
 import {auth,  signOut, onAuthStateChanged } from '../../firebase.js'
 
-
-let sidebtn = document.getElementById('sidebtn');
-let sidebar = document.querySelector('.sidebar');
-let logout = document.querySelector('.logout');
+const sidebtn = document.getElementById('sidebtn');
+const moblogout = document.getElementById('moblogout');
+const logOutBtn = document.querySelector(".logout");
+const sidebar = document.querySelector('.sidebar');
 let isOpen = false;
 
 function sideBar() {
@@ -40,19 +40,6 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-logout.addEventListener('click', logOut);
+logOutBtn.addEventListener('click', logOut);
+moblogout.addEventListener('click', logOut);
 sidebtn.addEventListener('click' , sideBar);
