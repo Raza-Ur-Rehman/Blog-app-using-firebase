@@ -17,7 +17,6 @@
 <body>
     <div class="page1 page ">
         <div class="main page">
-
             <header class="header d-flex justify-content-between">
                 <div class="logo d-flex align-items-center">
                     <img src="../image/Star.png" alt="logo...">
@@ -27,8 +26,8 @@
                     <div class="box "><a href="#">Blog</a></div>
                     <div class="box"><a href="#">Categories</a></div>
                     <div class="box"><a href="#">Contact</a></div>
-                    <div class="box"><a href="#" class="logout">LogOut <i
-                                class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
+                    <div class="box"><button href="#" class="logout" >LogOut <i
+                                class="fa-solid fa-arrow-right-from-bracket"></i></button></div>
                 </div>
                 <div class="navbox d-lg-none d-xl-none d-xxl-none d-flex">
                     <div class="box" id="sidebtn">
@@ -43,8 +42,8 @@
                     <div class="box"><a href="#">Blog</a></div>
                     <div class="box"><a href="#">Categories</a></div>
                     <div class="box"><a href="#">Contact</a></div>
-                    <div class="box"><a href="#" class="logout">LogOut <i
-                                class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
+                    <div class="box"><button class="logout" id="moblogout">LogOut <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    </div>
                 </div>
             </header>
             <section class="herobox d-flex">
@@ -64,12 +63,12 @@
         </div>
     </div>
     <div class="page2">
-        <div class="top-heading mt-4">
-            <h1>Reading is good for health</h1>
+        <div class="top-heading mt-4 ">
+            <h1 class="text-center ">Reading is good for health</h1>
             <div class="underline"></div>
         </div>
         <div class="section">
-            <div class="row m-auto d-flex justify-content-center ">
+            <div class="row m-auto d-flex justify-content-center gap-5 ">
                 <div class="col-lg-6 ">
                     <div class="card card1">
                         <a href="#" class="btn text-bg-light  m-3">New Road</a>
@@ -93,7 +92,7 @@
 
                 </div>
             </div>
-            <div class="row m-auto d-flex justify-content-center ">
+            <div class="row m-auto d-flex justify-content-center gap-5 ">
                 <div class="col-lg-3 ">
                     <div class="card">
                         <div class="card-body">
@@ -130,9 +129,9 @@
 
                 </div>
             </div>
-            <div class="row m-auto d-flex justify-content-center ">
-                <div class="more">
-                    <a href="#" class="text-white-50 fs-5 ">See More Blog</a>
+            <div class="row m-auto d-flex justify-content-center mt-5 ">
+                <div class="more border border-black ">
+                    <a href="#" class="">See More Blog</a>
                 </div>
             </div>
         </div>
@@ -143,8 +142,8 @@
             <h1 class="fs-1">Featured Categories</h1>
         </div>
         <div class=" section h-75 align-items-center ">
-            <div class="row m-auto mb-5 " >
-                <div class="col-lg-3 col-box">
+            <div class="row m-auto mb-5 d-flex  flex-wrap" >
+                <div class="col-lg-3 ">
                     <div class="card catagry-box box1 ">
                         <h1>Trekking</h1>
                     </div>
@@ -254,7 +253,7 @@
 
     <script type="module" src="../../firebase.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="./dashboard.js"></script>
 
 </body>
 
