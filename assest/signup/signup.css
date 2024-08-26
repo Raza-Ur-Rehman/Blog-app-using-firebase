@@ -106,3 +106,27 @@
 .register a:hover{
     text-decoration: underline;
 }
+#googlebtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 45px;
+    margin-top: 20px;
+}
+#googlebtn img {
+    object-fit: cover;
+    height: 100%;
+    width: 100px;
+
+}
