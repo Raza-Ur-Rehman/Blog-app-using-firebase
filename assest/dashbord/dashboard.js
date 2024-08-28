@@ -56,7 +56,7 @@ const addBlogBtn = document.getElementById('add-blog-btn');
 
 const createblog = () => {
     event.preventDefault();
-    console.log(inputDate.value);
+    
 
     
 }
