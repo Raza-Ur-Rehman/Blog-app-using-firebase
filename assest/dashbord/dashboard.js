@@ -5,8 +5,6 @@ const moblogout = document.getElementById('moblogout');
 const logOutBtn = document.querySelector(".logout");
 const sidebar = document.querySelector('.sidebar');
 let isOpen = false;
-
-
 // side bar function 
 function sideBar() {
   isOpen = !isOpen;
@@ -44,3 +42,11 @@ onAuthStateChanged(auth, (user) => {
 logOutBtn.addEventListener('click', logOut);
 moblogout.addEventListener('click', logOut);
 sidebtn.addEventListener('click' , sideBar);
+
+// blog page
+
+const blogTitle = document.getElementById('blog-title');
+const blogContent = document.getElementById('blog-content');
+const blogAuthor = document.getElementById('blog-author');
+const blogDate = document.getElementById('blog-date');
+const blogImage = document.getElementById('blog-image');
