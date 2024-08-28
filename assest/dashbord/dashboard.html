@@ -41,12 +41,17 @@
                         <i class="fa-solid fa-bars"></i>
                     </div>
                 </div>
-
             </header>
             <!-- sidebar  -->
             <header class="header sidebar page d-lg-none">
                 <div class="navbox d-flex flex-column gap-2 ">
-                    <div class="box"><a href="#page2">Blog</a></div>
+                    <div class="box position-relative"><a href="#">Blog &dtrif;</a>
+                        <ul class="dropdown top-100">
+                            <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Create
+                                    Blog</a></li>
+                            <li><a href="#page2">See All Blog </a></li>
+                        </ul>
+                    </div>
                     <div class="box"><a href="#page3">Categories</a></div>
                     <div class="box"><a href="#page4">Contact</a></div>
                     <div class="box"><button class="logout" id="moblogout">LogOut <i
@@ -85,7 +90,8 @@
                                     <label for="title" class="col-form-label">Title:</label>
                                     <input type="text" class="form-control" id="title">
                                 </div>
-                                <div class="mb-3 dropend">
+                                <div class="mb-3 ">
+                                    <div class="dropend">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             Categories
@@ -96,6 +102,11 @@
                                             <li><a class="dropdown-item" href="#">News</a></li>
                                             <li><a class="dropdown-item" href="#">Sports</a></li>
                                         </ul>
+                                    </div>
+                                    <div class="">
+                                        <label for="image" class="col-form-label">Image:</label>
+                                        <input type="file" class="form-control" id="image">
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Description" class="col-form-label">Description</label>
