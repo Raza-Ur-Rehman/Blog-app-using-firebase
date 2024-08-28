@@ -45,8 +45,25 @@ sidebtn.addEventListener('click' , sideBar);
 
 // blog page
 
-const blogTitle = document.getElementById('blog-title');
-const blogContent = document.getElementById('blog-content');
-const blogAuthor = document.getElementById('blog-author');
-const blogDate = document.getElementById('blog-date');
-const blogImage = document.getElementById('blog-image');
+// const blogTitle = document.getElementById('blog-title');
+// const blogContent = document.getElementById('blog-content');
+// const blogAuthor = document.getElementById('blog-author');
+// const blogDate = document.getElementById('blog-date');
+// const blogImage = document.getElementById('blog-image');
+let formFeild = document.querySelectorAll(".blogmodal form input");
+const [inputTitle, inputContent, inputAuthor,inputDate, inputImage,inputCategory] = formFeild;
+const addBlogBtn = document.getElementById('add-blog-btn');
+
+const createblog = () => {
+    event.preventDefault();
+    console.log(inputDate.value);
+
+    
+}
+
+addBlogBtn.addEventListener('click', createblog);
+
+
+
+
+
