@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="page1 page ">
+    <div class="page " id="page1">
         <div class="main page">
             <header class="header d-flex justify-content-between">
                 <div class="logo d-flex align-items-center">
@@ -23,9 +23,15 @@
                     <h2>bbc</h2>
                 </div>
                 <div class="navbox d-lg-flex d-xl-flex d-xxl-flex d-none ">
-                    <div class="box "><a href="#">Blog</a></div>
-                    <div class="box"><a href="#">Categories</a></div>
-                    <div class="box"><a href="#">Contact</a></div>
+                    <div class="box"><a href="#">Blog &dtrif;</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Illustration</a></li>
+                            <li><a href="#">Iconography</a></li>
+                        </div>
+                    <div class="box"><a href="#page3">Categories</a></div>
+                    <div class="box"><a href="#page4">Contact</a></div>
                     <div class="box"><button href="#" class="logout" >LogOut <i
                                 class="fa-solid fa-arrow-right-from-bracket"></i></button></div>
                 </div>
@@ -39,9 +45,9 @@
             <!-- sidebar  -->
             <header class="header sidebar page d-lg-none">
                 <div class="navbox d-flex flex-column gap-2 ">
-                    <div class="box"><a href="#">Blog</a></div>
-                    <div class="box"><a href="#">Categories</a></div>
-                    <div class="box"><a href="#">Contact</a></div>
+                    <div class="box"><a href="#page2">Blog</a></div>
+                    <div class="box"><a href="#page3">Categories</a></div>
+                    <div class="box"><a href="#page4">Contact</a></div>
                     <div class="box"><button class="logout" id="moblogout">LogOut <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
                     </div>
                 </div>
@@ -62,13 +68,13 @@
             </section>
         </div>
     </div>
-    <div class="page2">
+    <div id="page2">
         <div class="top-heading mt-4 ">
             <h1 class="text-center ">Reading is good for health</h1>
             <div class="underline"></div>
         </div>
         <div class="section">
-            <div class="row m-auto d-flex justify-content-center gap-5 ">
+            <div class="row m-auto d-flex justify-content-around gap-4 ">
                 <div class="col-lg-6 ">
                     <div class="card card1">
                         <a href="#" class="btn text-bg-light  m-3">New Road</a>
@@ -79,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 ">
+                <div class="col-lg-3 mycard">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Global Travel And Vacation Luxury Travel On A Tight Budget</h5>
@@ -92,8 +98,8 @@
 
                 </div>
             </div>
-            <div class="row m-auto d-flex justify-content-center gap-5 ">
-                <div class="col-lg-3 ">
+            <div class="row m-auto d-flex justify-content-around gap-4  mt-5">
+                <div class="col-lg-3 mycard">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Live Poker How To Win Tournament Game</h5>
@@ -104,7 +110,7 @@
                         <p class="card-text ">Jan 21,2018 : Design : Creation </p>
                     </div>
                 </div>
-                <div class="col-lg-3 ">
+                <div class="col-lg-3 mycard">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Airpot Hotel The right Way To Start A Short Break Holiday</h5>
@@ -116,7 +122,7 @@
                     </div>
 
                 </div>
-                <div class="col-lg-3 ">
+                <div class="col-lg-3 mycard">
                     <div class="card card5">
                         <div class="card-body1">
                             <h5 class="card-title">How to Fly Privte Jet On Your Next Trip</h5>
@@ -129,36 +135,38 @@
 
                 </div>
             </div>
-            <div class="row m-auto d-flex justify-content-center mt-5 ">
-                <div class="more border border-black ">
-                    <a href="#" class="">See More Blog</a>
+            <div class="row m-auto w-100">
+                <div class="col-12 m-auto d-flex  justify-content-center mt-5  ">
+                    <div class="more border border-black ">
+                        <a href="#" class="">See More Blog</a>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
-    <div class="page3 ">
+    <div id="page3">
         <div class="top-heading mt-4 mb-5">
             <h1 class="fs-1">Featured Categories</h1>
         </div>
-        <div class=" section h-75 align-items-center ">
-            <div class="row m-auto mb-5 d-flex  flex-wrap" >
-                <div class="col-lg-3 ">
+        <div class=" section align-items-center ">
+            <div class="row m-auto mb-5 d-flex justify-content-around gap-5 " >
+                <div class="col-lg-2 col-box ">
                     <div class="card catagry-box box1 ">
                         <h1>Trekking</h1>
                     </div>
                 </div>
-                <div class="col-lg-3 col-box">
+                <div class="col-lg-2 col-box">
                     <div class="card catagry-box box2 ">
                         <h1>Greenery</h1>
                     </div>
                 </div>
-                <div class="col-lg-3 col-box">
+                <div class="col-lg-2 col-box">
                     <div class="card catagry-box box3 ">
                         <h1>Asia</h1>
                     </div>
-                </div>
-                <div class="col-lg-3 col-box">
+                </div> 
+                <div class="col-lg-2 col-box">
                     <div class="card catagry-box box4 ">
                         <h1>Beach</h1>
                     </div>
@@ -168,7 +176,7 @@
 
 
     </div>
-    <div class="page4 d-flex flex-column gap-5">
+    <div class="d-flex flex-column gap-5" id="page4">
         <div class="top-heading pt-5 ">
             <h1 class="fs-1 fw-light">Contact</h1>
             <div class="underline"></div>
