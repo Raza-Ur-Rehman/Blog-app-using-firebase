@@ -26,9 +26,10 @@
                 <div class="navbox d-lg-flex d-xl-flex d-xxl-flex d-none ">
                     <div class="box position-relative"><a href="#">Blog &dtrif;</a>
                         <ul class="dropdown top-100">
-                            <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Create
-                                    Blog</a></li>
-                            <li><a href="#page2">See All Blog </a></li>
+                            <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                        class="fa-solid fa-plus fs-6"></i>Create
+                                    Blog </a></li>
+                            <li><a href="#page2"><i class="fa-brands fa-blogger-b fs-6"></i> See All Blog </a></li>
                         </ul>
                     </div>
                     <div class="box"><a href="#page3">Categories</a></div>
@@ -45,11 +46,12 @@
             <!-- sidebar  -->
             <header class="header sidebar page d-lg-none">
                 <div class="navbox d-flex flex-column gap-2 ">
-                    <div class="box position-relative"><a href="#">Blog &dtrif;</a>
-                        <ul class="dropdown top-100">
-                            <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Create
+                    <div class="box position-relative d-block"><a href="#">Blog &dtrif;</a>
+                        <ul class="dropdown start-100 top-0">
+                            <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                        class="fa-solid fa-plus fs-6"></i>Create
                                     Blog</a></li>
-                            <li><a href="#page2">See All Blog </a></li>
+                            <li><a href="#page2"><i class="fa-brands fa-blogger-b fs-6"></i>See All Blog </a></li>
                         </ul>
                     </div>
                     <div class="box"><a href="#page3">Categories</a></div>
@@ -73,8 +75,9 @@
 
                 </div>
             </section>
-
         </div>
+
+        <!-- blog modal  -->
         <div class=" blogmodal ">
             <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -84,39 +87,52 @@
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Blog</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body mb-1">
                             <form>
                                 <div class="mb-3">
-                                    <label for="title" class="col-form-label">Title:</label>
-                                    <input type="text" class="form-control" id="title">
+                                    <label for="inputTitle" class="col-form-label">Title:</label>
+                                    <input type="text" class="form-control" id="inputTitle" maxlength="60">
                                 </div>
-                                <div class="mb-3 ">
-                                    <div class="dropend">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Categories
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Tech</a></li>
-                                            <li><a class="dropdown-item" href="#">History</a></li>
-                                            <li><a class="dropdown-item" href="#">News</a></li>
-                                            <li><a class="dropdown-item" href="#">Sports</a></li>
-                                        </ul>
+                                <div class="mb-3 d-flex">
+                                    <div class="">
+                                        <label for="inputAuthor" class="col-form-label">Author Name:</label>
+                                        <input type="text" class="form-control" id="inputAuthor">
                                     </div>
                                     <div class="">
-                                        <label for="image" class="col-form-label">Image:</label>
-                                        <input type="file" class="form-control" id="image">
+                                        <label for="inputDate" class="col-form-label">Date:</label>
+                                        <input type="date" class="form-control" id="inputDate">
                                     </div>
                                 </div>
+                                <div class="mb-3 d-flex">
+                                    <div class="">
+                                        <label for="inputImageclass="col-form-label">Image</label>
+                                        <input type="file" class="form-control" id="inputImage">
+                                    </div>
+                                    <div class="dropend" >
+                                        <label for="inputCategory" class="col-form-label">Category</label>
+                                        <select name="dropdown" id="inputCategory">
+                                             <option value="">Select Categories</option>
+                                             <option value="Tech">Tech</option>
+                                             <option value="History">History</option>
+                                             <option value="News">News</option>
+                                             <option value="Sports">Sports</option>
+                                             <option value="Pohotography">Pohotograpy</option>
+                                             <option value="Podcast">Podcast</option>
+                                             <option value="Visuals">Visuals</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                
                                 <div class="mb-3">
-                                    <label for="Description" class="col-form-label">Description</label>
-                                    <textarea class="form-control " rows="5" id="Description"></textarea>
+                                    <label for="inputContent" class="col-form-label">Content</label>
+                                    <textarea class="form-control " rows="5" id="inputContent" maxlength="210"></textarea>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancle</button>
-                            <button type="button" class="btn btn-outline-success">ADD+</button>
+                            <button type="button" class="btn btn-outline-success" id="add-blog-btn">ADD+</button>
                         </div>
                     </div>
                 </div>
@@ -201,7 +217,7 @@
         </div>
 
     </div>
-    <div id="page3 ">
+    <div id="page3">
         <div class="top-heading mt-4 mb-5">
             <h1 class="fs-1">Featured Categories</h1>
         </div>
