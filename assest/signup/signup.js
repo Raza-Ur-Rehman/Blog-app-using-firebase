@@ -8,7 +8,6 @@ const provider = new GoogleAuthProvider();
 
 const signUp = ()=>{
     event.preventDefault();
-    // loader.style.display = "block";
     signUpBtn.innerText = 'loading....'
      createUserWithEmailAndPassword(auth, signupUserEmail.value, signupUserPass.value)
   .then((userCredential) => {
