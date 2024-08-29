@@ -133,7 +133,7 @@
 .sidebar {
     display: none;
     padding: 0px 20px;
-    height: 25%;
+    height: 25vh;
     /* display: block; */
 }
 
@@ -141,12 +141,11 @@
 
 .herobox {
     align-items: end;
-    height: 80%;
+    height: 80vh;
 }
 
 .herosec {
     width: 670px;
-
 }
 
 .herosec p,
@@ -440,12 +439,19 @@ color: #848586;
 
     .herobox {
         align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        /* position: fixed; */
+        /* height: 100vh; */
     }
 
     .herosec {
         width: 100%;
+        /* margin-top: ; */
     }
-
+    .herosec .title h1 {
+        font-size: 34px;
+    } 
     .herosec .title .dis {
         width: 100%;
     }
