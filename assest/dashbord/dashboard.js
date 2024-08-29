@@ -1,4 +1,4 @@
-import { auth, signOut, onAuthStateChanged , db, collection, addDoc } from "../../firebase.js";
+import { auth, signOut, onAuthStateChanged , db, collection, addDoc,  } from "../../firebase.js";
 
 const sidebtn = document.getElementById("sidebtn");
 const moblogout = document.getElementById("moblogout");
@@ -43,7 +43,7 @@ logOutBtn.addEventListener("click", logOut);
 moblogout.addEventListener("click", logOut);
 sidebtn.addEventListener("click", sideBar);
 
-// blog page function
+// create blog function
 
 let formFeild = document.querySelectorAll(
   ".blogmodal form input, textarea, select"
@@ -61,8 +61,9 @@ const createblog = async() => {
     inputCategory.value.trim() !== "" &&
     inputContent.value.trim() !== ""
   ) {
+    addBlogBtn.innerHTML = "<div class='spinner'></div>"
     try {
-        const docRef = await addDoc(collection(db, "Blog"), {
+        const docRef = await addDoc(collection(db, `${inputCategory.value} Blog`), {
           Title: inputTitle.value,
           Author: inputAuthor.value,
           Date: inputDate.value,
@@ -72,6 +73,20 @@ const createblog = async() => {
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
+        addBlogBtn.innerHTML = "Add+";
+      }
+      finally{
+        addBlogBtn.innerHTML = "Add+";
+        Toastify({
+          text: "Blog Added Successfully",
+          duration: 3000,
+        }).showToast();
+        inputTitle.value = "";
+        inputAuthor.value = "";
+        inputDate.value = "";
+        inputImage.value = "";
+        inputCategory.value = "";
+        inputContent.value = "";
       }
 
     
@@ -85,3 +100,30 @@ const createblog = async() => {
 };
 
 addBlogBtn.addEventListener("click", createblog);
+
+
+// get blog function 
+
+const showBlog = () => {
+  
+  db.collection(`${inputCategory.value} Blog`)
+   .get()
+   .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        blogCard.innerHTML = `
+        <h2>${doc.data().Title}</h2>
+        <p>Author: ${doc.data().Author}</p>
+        <p>Date: ${doc.data().Date}</p>
+        <p>Category: ${doc.data().Category}</p>
+        <p>Content: ${doc.data().Content}</p>
+        `;
+        document.querySelector(".blog-container").appendChild(blogCard);
+      });
+    })
+   .catch((error) => {
+      console.error("Error getting documents: ", error);
+    });
+
+
+}
