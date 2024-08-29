@@ -114,3 +114,26 @@ const showBlog = async() => {
   
 }
 showBlog();
+
+
+
+
+// //firestore video 3  time 1:10:24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
