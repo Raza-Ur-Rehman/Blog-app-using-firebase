@@ -1,4 +1,4 @@
-import { auth, signOut, onAuthStateChanged , db, collection, addDoc,  } from "../../firebase.js";
+import { auth, signOut, onAuthStateChanged , db, collection, addDoc,getDocs } from "../../firebase.js";
 
 const sidebtn = document.getElementById("sidebtn");
 const moblogout = document.getElementById("moblogout");
@@ -104,26 +104,11 @@ addBlogBtn.addEventListener("click", createblog);
 
 // get blog function 
 
-const showBlog = () => {
+const blogCard = document.getElementById("blog-data");
+const showBlog = async() => {
+  const querySnapshot = await getDocs(collection(db, "users"));
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data()}`);
+  });
   
-  db.collection(`${inputCategory.value} Blog`)
-   .get()
-   .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-        blogCard.innerHTML = `
-        <h2>${doc.data().Title}</h2>
-        <p>Author: ${doc.data().Author}</p>
-        <p>Date: ${doc.data().Date}</p>
-        <p>Category: ${doc.data().Category}</p>
-        <p>Content: ${doc.data().Content}</p>
-        `;
-        document.querySelector(".blog-container").appendChild(blogCard);
-      });
-    })
-   .catch((error) => {
-      console.error("Error getting documents: ", error);
-    });
-
-
 }
