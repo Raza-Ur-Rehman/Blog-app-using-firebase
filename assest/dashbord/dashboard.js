@@ -105,10 +105,12 @@ addBlogBtn.addEventListener("click", createblog);
 // get blog function 
 
 const blogCard = document.getElementById("blog-data");
+
 const showBlog = async() => {
-  const querySnapshot = await getDocs(collection(db, "users"));
+  const querySnapshot = await getDocs(collection(db, `${inputCategory.value} Blog`));
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data()}`);
   });
   
 }
+showBlog();
