@@ -14,20 +14,25 @@
 </head>
 <body>
     <header class="">
-        <div class="top-heading mt-4 bg-danger w-100 position-relative">
+        <div class="top-heading position-relative">
+            <div class="back position-absolute ">
+                <a href="../dashbord/dashboard.html" class="text-black ">
+                    <i class="fa-solid fa-arrow-left fs-5"></i>
+                </a>
+            </div>
             <h1 class="text-center ">Reading All Blog</h1>
             <div class="underline"></div>
-            <div class="search-box position-absolute">
-                <input type="text" id="search-input" placeholder="Search by blog title...">
-                <button type="button" class="btn btn-primary" id="search-btn">Search</button>
-                <button type="button" class="btn btn-primary" id="clear-btn">Clear</button>
-            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search by blog title...">
+            <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+            <button type="button" class="btn btn-primary" id="clear-btn">Clear</button>
         </div>
     </header>
     <div class="col-12 justify-content-center no-data" id="no-data">
         <img src="../image/No data.gif" alt="" >
     </div>
-    <div class="loader-box d-flex justify-content-center mt-5">
+    <div class=" loader-box d-flex justify-content-center mt-5 ">
         <div class="loader" id="loader"></div>
     </div>
     <div class="row m-auto d-flex justify-content-around " id="blog-data">
