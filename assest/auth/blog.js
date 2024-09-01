@@ -1,12 +1,18 @@
 import { db,collection,addDoc,getDocs,} from "../../firebase.js"
 let loader = document.getElementById('loader');
 const blogCard = document.getElementById("blog-data");
+const dataNotFound = document.getElementById("no-data");
 loader.style.display = 'none';
 // fetch data from firebase and show on dashboard page
 const showBlogs = async () => {
     loader.style.display = 'block';
     try {
         const querySnapshot = await getDocs(collection(db, "userBlog"));
+        if(querySnapshot.empty){
+            dataNotFound.style.display = 'flex';
+            loader.style.display = 'none';
+            
+        }
         querySnapshot.forEach((doc) => {
           const { Title, Author, Content, Category, Date } = doc.data();
           blogCard.innerHTML += `
@@ -46,6 +52,7 @@ const showBlogs = async () => {
     finally{
         // console.log("Error getting documents: ", error);
         loader.style.display = 'none';
+        // dataNotFound.style.display = 'none';
     }
 };
 showBlogs();
