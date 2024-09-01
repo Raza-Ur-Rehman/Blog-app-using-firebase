@@ -10,8 +10,7 @@ const showBlogs = async () => {
         const querySnapshot = await getDocs(collection(db, "userBlog"));
         if(querySnapshot.empty){
             dataNotFound.style.display = 'flex';
-            loader.style.display = 'none';
-            
+            // loader.style.display = 'none';
         }
         querySnapshot.forEach((doc) => {
           const { Title, Author, Content, Category, Date } = doc.data();
