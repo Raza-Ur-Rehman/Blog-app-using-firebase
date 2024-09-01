@@ -28,13 +28,17 @@
     margin-bottom: 20px;
     border-radius: 8px;
 }
-.search-box {
-    right: 50px;
+.back {
     top: 30px;
-    /* position: absolute;  */
+    left: 50px;
+}
+.search-box {
+    right: 10px;
+    top: 20px;
+    position: absolute; 
     font-size: 18px;
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 .search-box input {
     width: 100%;
@@ -104,6 +108,7 @@
     width: 80px;
     aspect-ratio: 1.154;
     position: relative;
+    top: 100px;
     background: conic-gradient(from 120deg at 50% 64%,#0000, #1F2831 1deg 120deg,#0000 121deg);
     animation: l27-0 1.5s infinite cubic-bezier(0.3,1,0,1);
   }
@@ -135,5 +140,13 @@
     }
     .card-title {
         font-size: 24px !important;
+    }
+    .search-box {
+        position: static;
+      
+    }
+    .back {
+        top: 30px;
+        left: 20px;
     }
 }
