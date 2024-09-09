@@ -1,10 +1,10 @@
-import { db,collection,addDoc,getDocs,} from "../../firebase.js"
+import { db,collection,addDoc,getDocs,doc, deleteDoc,} from "../../firebase.js"
 let loader = document.getElementById('loader');
 const blogCard = document.getElementById("blog-data");
 const dataNotFound = document.getElementById("no-data");
 loader.style.display = 'none';
 // fetch data from firebase and show on dashboard page
-const showBlogs = async () => {
+const getBlogs = async () => {
     loader.style.display = 'block';
     try {
         const querySnapshot = await getDocs(collection(db, "userBlog"));
@@ -13,6 +13,7 @@ const showBlogs = async () => {
             // loader.style.display = 'none';
         }
         querySnapshot.forEach((doc) => {
+                        
           const { Title, Author, Content, Category, Date } = doc.data();
           blogCard.innerHTML += `
               <div class="col-lg-3 mycard">
@@ -34,10 +35,10 @@ const showBlogs = async () => {
                         <p class="card-text ">Date : <span id="blog-date"> ${Date}</span></p>
                     </div>
                     <div class="mb-3 d-flex justify-content-around">
-                        <button class="btn fs-5 fw-semibold">
+                        <button class="btn fs-5 fw-semibold" onclick="editData('${doc.id}',this)">
                             <i class="fas fa-edit "></i> Edit
                         </button>
-                        <button class="btn fs-5 fw-semibold">
+                        <button class="btn fs-5 fw-semibold "onclick="deleteData('${doc.id}',this)">
                          <i class="fas fa-trash-alt"></i> Delete
                         </button>
                     </div>
@@ -46,17 +47,54 @@ const showBlogs = async () => {
         });
     } 
     catch (error) {
-        console.log(error);
+        Toastify({
+            text: error,
+            duration: 3000,
+          }).showToast();
+          return;
     }
     finally{
         // console.log("Error getting documents: ", error);
         loader.style.display = 'none';
-        // dataNotFound.style.display = 'none';
+         
     }
 };
-showBlogs();
+getBlogs();
 
-
+window.editData = async(id) => {
+    // get blog data to edit
+    // open modal and show data
+    console.log("edit");
+    
+}
+window.deleteData = async (id , button) => {
+    // delete blog data from firebase
+    // show toast message
+    // console.log('delete', id, button);
+    
+    button.innerHTML = "<div class='spinner'></div>"
+    try {
+        await deleteDoc(doc(db, "userBlog", id));
+        getBlogs(); 
+        Toastify({
+            text: "Blog Deleted Successfully",
+            duration: 3000,
+        }).showToast();
+        // after delete refresh data
+    }
+    catch (error) {
+        Toastify({
+            text: error,
+            duration: 3000,
+          }).showToast();
+        console.log(error);  
+}
+finally {
+    getBlogs();
+}
+    // await deleteDoc(doc(db, "cities", "DC"));
+}
+ 
 
 
 
