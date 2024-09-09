@@ -17,6 +17,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: contain;
+    height: auto;
     /* overflow: hidden; */
 }
 
@@ -25,6 +26,7 @@
     opacity: 55%;
     padding: 10px 140px;
     color: #f4f4f4;
+    height: auto;
 }
    /* header    */
 .header {
@@ -132,8 +134,9 @@
 
 .sidebar {
     display: none;
-    padding: 0px 20px;
-    height: 25vh;
+    padding: 10px 20px;
+    height: auto;
+    /* position: relative; */
     /* display: block; */
 }
 
@@ -146,6 +149,7 @@
 
 .herosec {
     width: 670px;
+    /* margin-bottom: 20px; */
 }
 
 .herosec p,
@@ -463,7 +467,7 @@ color: #848586;
 
     .herosec {
         width: 100%;
-        /* margin-top: ; */
+        /* margin-top: -10px; */
     }
     .herosec .title h1 {
         font-size: 34px;
