@@ -110,33 +110,33 @@ addBlogBtn.addEventListener("click", createblog);
 
 const blogCard = document.getElementById("blog-data");
 // `${inputCategory.value} Blog`
-const showBlogs = async () => {
-  const querySnapshot = await getDocs(collection(db, "userBlog"));
-  querySnapshot.forEach((doc) => {
-    const { Title, Author, Content, Category, Date } = doc.data();
-    blogCard.innerHTML += `
-        <div class="col-lg-3 mycard">
-            <div class="card">
-                <div class="card-img position-relative">
-                    <a href="#" class="btn text-bg-light position-absolute" id="blog-category">${Category}</a>
-                    <img src="../image/img1.png" alt="" class="object-fit-cover" id="blog-image">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title" id="blog-title">
-                      ${Title}
-                    </h5>
-                    <p class="card-text" id="blog-content">
-                      ${Content}
-                    </p> 
-                </div>
-                <div class="card-body d-flex justify-content-between">
-                    <p class="card-text ">Author : <span id="blog-author">${Author} </span> </p>
-                    <p class="card-text ">Date : <span id="blog-date"> ${Date}</span></p>
-                </div>
-            </div>
-        </div>`;
-  });
-};
-showBlogs();
+// const showBlogs = async () => {
+//   const querySnapshot = await getDocs(collection(db, "userBlog"));
+//   querySnapshot.forEach((doc) => {
+//     const { Title, Author, Content, Category, Date } = doc.data();
+//     blogCard.innerHTML += `
+//         <div class="col-lg-3 mycard">
+//             <div class="card">
+//                 <div class="card-img position-relative">
+//                     <a href="#" class="btn text-bg-light position-absolute" id="blog-category">${Category}</a>
+//                     <img src="../image/img1.png" alt="" class="object-fit-cover" id="blog-image">
+//                 </div>
+//                 <div class="card-body">
+//                     <h5 class="card-title" id="blog-title">
+//                       ${Title}
+//                     </h5>
+//                     <p class="card-text" id="blog-content">
+//                       ${Content}
+//                     </p> 
+//                 </div>
+//                 <div class="card-body d-flex justify-content-between">
+//                     <p class="card-text ">Author : <span id="blog-author">${Author} </span> </p>
+//                     <p class="card-text ">Date : <span id="blog-date"> ${Date}</span></p>
+//                 </div>
+//             </div>
+//         </div>`;
+//   });
+// };
+// showBlogs();
 
 // //firestore video 3  time 1:10:24
