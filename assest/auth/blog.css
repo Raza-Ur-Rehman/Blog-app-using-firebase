@@ -134,6 +134,21 @@
      30%,70% {transform: rotate(calc(var(--s,1)*120deg)) translate(calc(var(--s,1)*-5px),10px)}
      100%    {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
   }
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#1F2831 94%,#0000) top/9px 9px no-repeat,
+           conic-gradient(#0000 30%,#1F2831);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+ }
+ 
+ @keyframes spinner-c7wet2 {
+    100% {
+       transform: rotate(1turn);
+    }
+ }
 @media (max-width: 990px) {
     .card-text {
         font-size: 16px !important;
