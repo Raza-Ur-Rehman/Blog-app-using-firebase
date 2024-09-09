@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/fireba
 //  athuntication 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail,signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 // fireStore 
-import {getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import {getFirestore, collection, addDoc, getDocs,doc ,deleteDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyCXVfRzqvIaedgeA9vSYemrwnx5h52JUeE",
   authDomain: "blog-app-c4f8f.firebaseapp.com",
@@ -19,6 +19,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 // export function 
-export {getDocs, collection, addDoc, db, auth ,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail,signInWithPopup, GoogleAuthProvider}
+export {doc, deleteDoc ,getDocs, collection, addDoc, db, auth ,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail,signInWithPopup, GoogleAuthProvider}
 
 
